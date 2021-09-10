@@ -24,7 +24,7 @@
 <meta name="author" content="Claudia Guerrero" />
 
 
-<meta name="date" content="2021-09-09" />
+<meta name="date" content="2021-09-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 
-<link rel="next" href="intro.html"/>
+<link rel="next" href="literature.html"/>
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -137,19 +137,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Exploración datos Censo México 2020</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
-<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
-<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Importación de datos cartográficos</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="methods.html"><a href="methods.html#math-example"><i class="fa fa-check"></i><b>4.1</b> math example</a></li>
+<li class="chapter" data-level="1.0.1" data-path="index.html"><a href="index.html#cambio-de-acceso-estatal-en"><i class="fa fa-check"></i><b>1.0.1</b> Cambio de acceso estatal en:</a></li>
+<li class="chapter" data-level="1.0.2" data-path="index.html"><a href="index.html#para-determinar-las-variables-e-indicadores"><i class="fa fa-check"></i><b>1.0.2</b> Para determinar las variables e indicadores</a></li>
+<li class="chapter" data-level="1.0.3" data-path="index.html"><a href="index.html#importación-de-datos-censales"><i class="fa fa-check"></i><b>1.0.3</b> Importación de datos censales</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#pobtot"><i class="fa fa-check"></i><b>1.1</b> POBTOT</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a>
+<li class="chapter" data-level="2" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>2</b> Literature</a></li>
+<li class="chapter" data-level="3" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>3</b> Methods</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
-<li class="chapter" data-level="5.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+<li class="chapter" data-level="3.1" data-path="methods.html"><a href="methods.html#math-example"><i class="fa fa-check"></i><b>3.1</b> math example</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
+<li class="chapter" data-level="4" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>4</b> Applications</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>4.1</b> Example one</a></li>
+<li class="chapter" data-level="4.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>4.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>5</b> Final Words</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -173,11 +178,589 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Exploración datos Censo México 2020</h1>
 <p class="author"><em>Claudia Guerrero</em></p>
-<p class="date"><em>2021-09-09</em></p>
+<p class="date"><em>2021-09-10</em></p>
 </div>
-<div id="prerequisites" class="section level1" number="1">
-<h1><span class="header-section-number">Capítulo 1</span> Prerequisites</h1>
+<div id="importación-de-datos-cartográficos" class="section level1" number="1">
+<h1><span class="header-section-number">Capítulo 1</span> Importación de datos cartográficos</h1>
 
+<ul>
+<li>**Marco Geoestadístico</li>
+</ul>
+<p>El Marco Geoestadístico es un sistema único y de carácter nacional diseñado por el INEGI, el cual presenta la división del territorio nacional en diferentes niveles de desagregación para referir geográficamente la información estadística de los censos y encuestas institucionales y de las Unidades del Estado, que se integra al Sistema Nacional de Información Estadística y Geográfica (SNIEG).</p>
+<p><a href="https://inegi.org.mx/temas/mg/#Descargas" class="uri">https://inegi.org.mx/temas/mg/#Descargas</a></p>
+<p>Contenido</p>
+<p>Mapa con las coordenadas estatles.
+Marco Geoestadístico, septiembre 2019 2019 3.11 GB
+<a href="https://inegi.org.mx/contenidos/productos//prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/889463776079_s.zip" class="uri">https://inegi.org.mx/contenidos/productos//prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/889463776079_s.zip</a></p>
+<p>Ficha de información.</p>
+<p><a href="https://inegi.org.mx/app/biblioteca/ficha.html?upc=889463776079" class="uri">https://inegi.org.mx/app/biblioteca/ficha.html?upc=889463776079</a></p>
+<p>Los nombres de archivos se conforman con las claves 00 y la capa con sufijos descriptivos del contenido del archivo:
+Donde:</p>
+<ul>
+<li>00ent Polígonos de Áreas Geoestadísticas Estatales</li>
+<li>00mun Polígonos de Áreas Municipales</li>
+<li>00a Polígonos de Áreas Geoestadísticas Básicas Urbanas y Rurales</li>
+<li>00l Polígonos de Localidades Urbanas y Rurales amanzanadas</li>
+<li>00lpr Puntos de Localidades Rurales amanzanadas y no amanzanadas</li>
+</ul>
+<p>Marco Geoestadístico. Censo de Población y Vivienda 2020 2020 2.65 GB
+<a href="https://inegi.org.mx/contenidos/productos//prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/889463807469_s.zip" class="uri">https://inegi.org.mx/contenidos/productos//prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/889463807469_s.zip</a></p>
+<div id="cambio-de-acceso-estatal-en" class="section level3" number="1.0.1">
+<h3><span class="header-section-number">1.0.1</span> Cambio de acceso estatal en:</h3>
+<p><a href="https://www.inegi.org.mx/programas/ccpv/2020/default.html#Datos_abiertos" class="uri">https://www.inegi.org.mx/programas/ccpv/2020/default.html#Datos_abiertos</a></p>
+<p>Ficha de información
+<a href="https://inegi.org.mx/app/biblioteca/ficha.html?upc=889463807469" class="uri">https://inegi.org.mx/app/biblioteca/ficha.html?upc=889463807469</a></p>
+<p>Se descarga y se descomprime localmente
+Se crea una carpeta para los datos geográficos</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#La ruta para el mapa de México se toma del Marcogeostadístico nacional</span></span>
+<span id="cb1-2"><a href="index.html#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="index.html#cb1-3" aria-hidden="true" tabindex="-1"></a>rutam<span class="ot">&lt;-</span><span class="st">&quot;D:/Documents/Claudia/Midropbox/Investigacion y escritos/Marcogeoestadisticonacional/mg_sep2019_integrado/conjunto_de_datos&quot;</span></span>
+<span id="cb1-4"><a href="index.html#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="index.html#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Lectura del mapa a nivel de entidades</span></span>
+<span id="cb1-6"><a href="index.html#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="index.html#cb1-7" aria-hidden="true" tabindex="-1"></a>basemapan <span class="ot">&lt;-</span> <span class="fu">readOGR</span>(rutam,<span class="st">&quot;00ent&quot;</span>, <span class="at">use_iconv =</span> <span class="cn">TRUE</span>, <span class="at">encoding =</span> <span class="st">&quot;latin1&quot;</span>)</span></code></pre></div>
+<pre><code>## OGR data source with driver: ESRI Shapefile 
+## Source: &quot;D:\Documents\Claudia\Midropbox\Investigacion y escritos\Marcogeoestadisticonacional\mg_sep2019_integrado\conjunto_de_datos&quot;, layer: &quot;00ent&quot;
+## with 32 features
+## It has 3 fields</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#presentación de la información de las entidades</span></span>
+<span id="cb3-2"><a href="index.html#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="index.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(basemapan) <span class="sc">+</span></span>
+<span id="cb3-4"><a href="index.html#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="at">col =</span> <span class="st">&quot;MAP_COLORS&quot;</span>,</span>
+<span id="cb3-5"><a href="index.html#cb3-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">minimize =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/setup3-1.png" width="672" /></p>
+</div>
+<div id="para-determinar-las-variables-e-indicadores" class="section level3" number="1.0.2">
+<h3><span class="header-section-number">1.0.2</span> Para determinar las variables e indicadores</h3>
+<p>En el sitio <a href="https://www.inegi.org.mx/programas/ccpv/2020/default.html#Datos_abiertos" class="uri">https://www.inegi.org.mx/programas/ccpv/2020/default.html#Datos_abiertos</a></p>
+<p>Se descarga de los “Principales resultados por localidad (ITER)” el de los Estados Unidos Mexicanos 2020" que es un archivo comprimido con el nombre de iter_00_cpv2020_csv.zip</p>
+<p>Cuando se descomprime en la carpeta del diccionario_datos se encuentra el archivo con el nombre de diccionario_datos_iter_00CSV20.csv</p>
+<p>Se creó un archivo con las variable para poderlas parametrizar en un archivo que lleva el nombre de variablescensales.csv</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="index.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#La ruta para el archivo que tiene las variables censales y su descripción</span></span>
+<span id="cb4-2"><a href="index.html#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="index.html#cb4-3" aria-hidden="true" tabindex="-1"></a>rutvar<span class="ot">&lt;-</span><span class="st">&quot;D:/Documents/Claudia/Midropbox/Investigacion y escritos&quot;</span></span>
+<span id="cb4-4"><a href="index.html#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="index.html#cb4-5" aria-hidden="true" tabindex="-1"></a>variablescensales<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="fu">paste0</span>(rutvar,<span class="st">&quot;/Censo2020/&quot;</span>,<span class="st">&quot;variablescensales.csv&quot;</span>),<span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">&quot;,&quot;</span>,<span class="at">encoding=</span><span class="st">&quot;UTF-8&quot;</span>)</span>
+<span id="cb4-6"><a href="index.html#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="index.html#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(variablescensales)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    222 obs. of  6 variables:
+##  $ X.U.FEFF.numero: int  1 2 3 4 5 6 7 8 9 10 ...
+##  $ indicador      : chr  &quot;Población total&quot; &quot;Población femenina&quot; &quot;Población masculina&quot; &quot;Población de 0 a 2 años&quot; ...
+##  $ descripcion    : chr  &quot;Total de personas que residen habitualmente en el país, la entidad federativa, el municipio o la demarcación te&quot;| __truncated__ &quot;Total de mujeres que residen habitualmente en el país, la entidad federativa, el municipio o la demarcación ter&quot;| __truncated__ &quot;Total de hombres que residen habitualmente en el país, la entidad federativa, el municipio o la demarcación ter&quot;| __truncated__ &quot;Personas de 0 a 2 años de edad.&quot; ...
+##  $ mnemonico      : chr  &quot;POBTOT&quot; &quot;POBFEM&quot; &quot;POBMAS&quot; &quot;P_0A2&quot; ...
+##  $ rangos         : chr  &quot;0...999999999&quot; &quot;0...999999999&quot; &quot;0...999999999&quot; &quot;0...999999999&quot; ...
+##  $ longitud       : int  9 9 9 9 9 9 9 9 9 9 ...</code></pre>
+</div>
+<div id="importación-de-datos-censales" class="section level3" number="1.0.3">
+<h3><span class="header-section-number">1.0.3</span> Importación de datos censales</h3>
+<p>En el sitio del INEGI se encuentran los resultados del CENSO 2020 para cada una de las entidades de la población
+<a href="https://www.inegi.org.mx/programas/ccpv/2020/default.html#Datos_abiertos" class="uri">https://www.inegi.org.mx/programas/ccpv/2020/default.html#Datos_abiertos</a></p>
+<p>Principales resultados por localidad (ITER)
+Estados Unidos Mexicanos 2020<br />
+<a href="https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip" class="uri">https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip</a></p>
+<p>Para recuperar los datos censales a nivel estatal:</p>
+<p>En el archivo se registra la población total de la entidad cuando en el nombre de la localidad aparece la leyenda “Total de la Entidad” esto se puede observar al descomprimirlo.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="index.html#cb6-1" aria-hidden="true" tabindex="-1"></a>url<span class="ot">&lt;-</span><span class="fu">paste0</span>(<span class="st">&quot;https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip&quot;</span>)</span>
+<span id="cb6-2"><a href="index.html#cb6-2" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">&lt;-</span> <span class="fu">tempfile</span>()</span>
+<span id="cb6-3"><a href="index.html#cb6-3" aria-hidden="true" tabindex="-1"></a>temp2 <span class="ot">&lt;-</span> <span class="fu">tempfile</span>()</span>
+<span id="cb6-4"><a href="index.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(url, temp)</span>
+<span id="cb6-5"><a href="index.html#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span>(<span class="at">zipfile =</span> temp, <span class="at">exdir =</span> temp2)</span>
+<span id="cb6-6"><a href="index.html#cb6-6" aria-hidden="true" tabindex="-1"></a>rut<span class="ot">&lt;-</span><span class="fu">file.path</span>(temp2)</span>
+<span id="cb6-7"><a href="index.html#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="index.html#cb6-8" aria-hidden="true" tabindex="-1"></a>censonal<span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">paste0</span>(rut,<span class="st">&quot;/&quot;</span>,<span class="st">&quot;conjunto_de_datos/conjunto_de_datos_iter_00CSV20.csv&quot;</span>),<span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">&quot;,&quot;</span>,<span class="at">encoding=</span><span class="st">&quot;UTF-8&quot;</span>)</span>
+<span id="cb6-9"><a href="index.html#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="index.html#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Datos de toda la entidad uso del campo nom_loc para identificar los valores de las variables a nivel estatal</span></span>
+<span id="cb6-11"><a href="index.html#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="index.html#cb6-12" aria-hidden="true" tabindex="-1"></a>censonal <span class="ot">&lt;-</span><span class="fu">subset</span>(censonal,censonal<span class="sc">$</span>NOM_LOC <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Total de la Entidad&quot;</span>))</span>
+<span id="cb6-13"><a href="index.html#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="index.html#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co">#Se le da nombre de CVE_ENT al primer atributo de la tabla censonal</span></span>
+<span id="cb6-15"><a href="index.html#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="index.html#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(censonal)[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">&quot;CVE_ENT&quot;</span></span>
+<span id="cb6-17"><a href="index.html#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="index.html#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co">#Ahora el mapa tiene el dato de las 198 variables del censo</span></span>
+<span id="cb6-19"><a href="index.html#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co">#Conversión a número</span></span>
+<span id="cb6-20"><a href="index.html#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-21"><a href="index.html#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="co">#Se obtiene el mismo atributo CVE_ENT del marco geoestadístico</span></span>
+<span id="cb6-22"><a href="index.html#cb6-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-23"><a href="index.html#cb6-23" aria-hidden="true" tabindex="-1"></a>codent<span class="ot">&lt;-</span><span class="fu">substr</span>(basemapan<span class="sc">$</span>CVE_ENT,<span class="dv">1</span>,<span class="dv">2</span>)</span>
+<span id="cb6-24"><a href="index.html#cb6-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-25"><a href="index.html#cb6-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Se convierte en un dato alfanumérico de dos digito como &quot;01&quot;, &quot;02&quot;,...&quot;32&quot;</span></span>
+<span id="cb6-26"><a href="index.html#cb6-26" aria-hidden="true" tabindex="-1"></a>latmx<span class="ot">=</span><span class="st">&quot;México&quot;</span></span>
+<span id="cb6-27"><a href="index.html#cb6-27" aria-hidden="true" tabindex="-1"></a>codent<span class="ot">&lt;-</span><span class="fu">sprintf</span>(<span class="st">&quot;%02d%s&quot;</span>, <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;[^0-9]+&quot;</span>, <span class="st">&quot;&quot;</span>, codent)), <span class="fu">gsub</span>(<span class="st">&quot;[0-9]+&quot;</span>, <span class="st">&quot;&quot;</span>, codent))</span>
+<span id="cb6-28"><a href="index.html#cb6-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-29"><a href="index.html#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="co">#Se agrega el campo CVE_ENT al censo</span></span>
+<span id="cb6-30"><a href="index.html#cb6-30" aria-hidden="true" tabindex="-1"></a>censonal<span class="sc">$</span>CVE_ENT<span class="ot">&lt;-</span>codent</span>
+<span id="cb6-31"><a href="index.html#cb6-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-32"><a href="index.html#cb6-32" aria-hidden="true" tabindex="-1"></a><span class="co">#Se extraen las columnas que contienen las variables censales para convertirlas a valores numéricas de tipo entero.</span></span>
+<span id="cb6-33"><a href="index.html#cb6-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-34"><a href="index.html#cb6-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-35"><a href="index.html#cb6-35" aria-hidden="true" tabindex="-1"></a>cols <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">11</span><span class="sc">:</span><span class="dv">231</span>)    </span>
+<span id="cb6-36"><a href="index.html#cb6-36" aria-hidden="true" tabindex="-1"></a>censonal[,cols] <span class="sc">%&lt;&gt;%</span> <span class="fu">lapply</span>(<span class="cf">function</span>(x) <span class="fu">as.integer</span>(<span class="fu">as.character</span>(x)))</span>
+<span id="cb6-37"><a href="index.html#cb6-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-38"><a href="index.html#cb6-38" aria-hidden="true" tabindex="-1"></a><span class="co">#Se integra el valor censal con el marco geoestadísto a través de la llave de la entidad CVE_ENT</span></span>
+<span id="cb6-39"><a href="index.html#cb6-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-40"><a href="index.html#cb6-40" aria-hidden="true" tabindex="-1"></a>basemapa<span class="ot">&lt;-</span><span class="fu">merge</span>(basemapan,censonal, <span class="at">by=</span><span class="st">&quot;CVE_ENT&quot;</span>, <span class="at">all.x =</span><span class="cn">TRUE</span>) </span>
+<span id="cb6-41"><a href="index.html#cb6-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-42"><a href="index.html#cb6-42" aria-hidden="true" tabindex="-1"></a><span class="co"># el archivo &quot;mplotVariableparametrizadanacional.R# tiene las instucciones para graficar</span></span>
+<span id="cb6-43"><a href="index.html#cb6-43" aria-hidden="true" tabindex="-1"></a><span class="co">#Se llama a través de la siguiente instrucción</span></span>
+<span id="cb6-44"><a href="index.html#cb6-44" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;mplotVariableparametrizadanacional.R&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="index.html#cb7-1" aria-hidden="true" tabindex="-1"></a>variablescensales <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="index.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(mnemonico) <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="index.html#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.character</span>()<span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="index.html#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">walk</span>(mplotVariableparametrizadanacional)</span></code></pre></div>
+</div>
+<div id="pobtot" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> POBTOT</h2>
+<p>Total de personas que residen habitualmente en el país, la entidad federativa, el municipio o la demarcación territorial y la localidad. Incluye la estimación del número de personas en viviendas particulares sin información de ocupantes. Incluye a la población que no especificó su edad. <img src="bookdown-demo_files/figure-html/setup6-1.png" width="672" /></p>
+<p>## POBFEM
+Total de mujeres que residen habitualmente en el país, la entidad federativa, el municipio o la demarcación territorial y la localidad. Incluye la estimación del número de mujeres en viviendas particulares sin información de ocupantes. Incluye a la población que no especificó su edad. <img src="bookdown-demo_files/figure-html/setup6-2.png" width="672" /></p>
+<p>## POBMAS
+Total de hombres que residen habitualmente en el país, la entidad federativa, el municipio o la demarcación territorial y la localidad. Incluye la estimación del número de hombres en viviendas particulares sin información de ocupantes. Incluye a la población que no especificó su edad. <img src="bookdown-demo_files/figure-html/setup6-3.png" width="672" /></p>
+<p>## P_0A2
+Personas de 0 a 2 años de edad. <img src="bookdown-demo_files/figure-html/setup6-4.png" width="672" /></p>
+<p>## P_0A2_F
+Mujeres de 0 a 2 años de edad. <img src="bookdown-demo_files/figure-html/setup6-5.png" width="672" /></p>
+<p>## P_0A2_M
+Hombres de 0 a 2 años de edad. <img src="bookdown-demo_files/figure-html/setup6-6.png" width="672" /></p>
+<p>## P_3YMAS
+Personas de 3 a 130 años de edad. <img src="bookdown-demo_files/figure-html/setup6-7.png" width="672" /></p>
+<p>## P_3YMAS_F
+Mujeres de 3 a 130 años de edad. <img src="bookdown-demo_files/figure-html/setup6-8.png" width="672" /></p>
+<p>## P_3YMAS_M
+Hombres de 3 a 130 años de edad. <img src="bookdown-demo_files/figure-html/setup6-9.png" width="672" /></p>
+<p>## P_5YMAS
+Personas de 5 a 130 años de edad. <img src="bookdown-demo_files/figure-html/setup6-10.png" width="672" /></p>
+<p>## P_5YMAS_F
+Mujeres de 5 a 130 años de edad. <img src="bookdown-demo_files/figure-html/setup6-11.png" width="672" /></p>
+<p>## P_5YMAS_M
+Hombres de 5 a 130 años de edad. <img src="bookdown-demo_files/figure-html/setup6-12.png" width="672" /></p>
+<p>## P_12YMAS
+Personas de 12 a 130 años de edad. <img src="bookdown-demo_files/figure-html/setup6-13.png" width="672" /></p>
+<p>## P_12YMAS_F
+Mujeres de 12 a 130 años de edad. <img src="bookdown-demo_files/figure-html/setup6-14.png" width="672" /></p>
+<p>## P_12YMAS_M
+Hombres de 12 a 130 años de edad. <img src="bookdown-demo_files/figure-html/setup6-15.png" width="672" /></p>
+<p>## P_15YMAS
+Personas de 15 a 130 años de edad. <img src="bookdown-demo_files/figure-html/setup6-16.png" width="672" /></p>
+<p>## P_15YMAS_F
+Mujeres de 15 a 130 años de edad. <img src="bookdown-demo_files/figure-html/setup6-17.png" width="672" /></p>
+<p>## P_15YMAS_M
+Hombres de 15 a 130 años de edad. <img src="bookdown-demo_files/figure-html/setup6-18.png" width="672" /></p>
+<p>## P_18YMAS
+Personas de 18 a 130 años de edad. <img src="bookdown-demo_files/figure-html/setup6-19.png" width="672" /></p>
+<p>## P_18YMAS_F
+Mujeres de 18 a 130 años de edad. <img src="bookdown-demo_files/figure-html/setup6-20.png" width="672" /></p>
+<p>## P_18YMAS_M
+Hombres de 18 a 130 años de edad. <img src="bookdown-demo_files/figure-html/setup6-21.png" width="672" /></p>
+<p>## P_3A5
+Personas de 3 a 5 años de edad. <img src="bookdown-demo_files/figure-html/setup6-22.png" width="672" /></p>
+<p>## P_3A5_F
+Mujeres de 3 a 5 años de edad. <img src="bookdown-demo_files/figure-html/setup6-23.png" width="672" /></p>
+<p>## P_3A5_M
+Hombres de 3 a 5 años de edad. <img src="bookdown-demo_files/figure-html/setup6-24.png" width="672" /></p>
+<p>## P_6A11
+Personas de 6 a 11 años de edad. <img src="bookdown-demo_files/figure-html/setup6-25.png" width="672" /></p>
+<p>## P_6A11_F
+Mujeres de 6 a 11 años de edad. <img src="bookdown-demo_files/figure-html/setup6-26.png" width="672" /></p>
+<p>## P_6A11_M
+Hombres de 6 a 11 años de edad. <img src="bookdown-demo_files/figure-html/setup6-27.png" width="672" /></p>
+<p>## P_8A14
+Personas de 8 a 14 años de edad. <img src="bookdown-demo_files/figure-html/setup6-28.png" width="672" /></p>
+<p>## P_8A14_F
+Mujeres de 8 a 14 años de edad. <img src="bookdown-demo_files/figure-html/setup6-29.png" width="672" /></p>
+<p>## P_8A14_M
+Hombres de 8 a 14 años de edad. <img src="bookdown-demo_files/figure-html/setup6-30.png" width="672" /></p>
+<p>## P_12A14
+Personas de 12 a 14 años de edad. <img src="bookdown-demo_files/figure-html/setup6-31.png" width="672" /></p>
+<p>## P_12A14_F
+Mujeres de 12 a 14 años de edad. <img src="bookdown-demo_files/figure-html/setup6-32.png" width="672" /></p>
+<p>## P_12A14_M
+Hombres de 12 a 14 años de edad. <img src="bookdown-demo_files/figure-html/setup6-33.png" width="672" /></p>
+<p>## P_15A17
+Personas de 15 a 17 años de edad. <img src="bookdown-demo_files/figure-html/setup6-34.png" width="672" /></p>
+<p>## P_15A17_F
+Mujeres de 15 a 17 años de edad. <img src="bookdown-demo_files/figure-html/setup6-35.png" width="672" /></p>
+<p>## P_15A17_M
+Hombres de 15 a 17 años de edad. <img src="bookdown-demo_files/figure-html/setup6-36.png" width="672" /></p>
+<p>## P_18A24
+Personas de 18 a 24 años de edad. <img src="bookdown-demo_files/figure-html/setup6-37.png" width="672" /></p>
+<p>## P_18A24_F
+Mujeres de 18 a 24 años de edad. <img src="bookdown-demo_files/figure-html/setup6-38.png" width="672" /></p>
+<p>## P_18A24_M
+Hombres de 18 a 24 años de edad. <img src="bookdown-demo_files/figure-html/setup6-39.png" width="672" /></p>
+<p>## P_15A49_F
+Mujeres de 15 a 49 años de edad. <img src="bookdown-demo_files/figure-html/setup6-40.png" width="672" /></p>
+<p>## P_60YMAS
+Personas de 60 a 130 años de edad. <img src="bookdown-demo_files/figure-html/setup6-41.png" width="672" /></p>
+<p>## P_60YMAS_F
+Mujeres de 60 a 130 años de edad. <img src="bookdown-demo_files/figure-html/setup6-42.png" width="672" /></p>
+<p>## P_60YMAS_M
+Hombres de 60 a 130 años de edad. <img src="bookdown-demo_files/figure-html/setup6-43.png" width="672" /></p>
+<p>## REL_H_M
+Resultado de dividir el total de hombres entre el total de mujeres y multiplicarlo por cien. Indica el número de hombres por cada 100 mujeres. <img src="bookdown-demo_files/figure-html/setup6-44.png" width="672" /></p>
+<p>## POB0_14
+Personas de 0 a 14 años de edad. <img src="bookdown-demo_files/figure-html/setup6-45.png" width="672" /></p>
+<p>## POB15_64
+Personas de 15 a 64 años de edad. <img src="bookdown-demo_files/figure-html/setup6-46.png" width="672" /></p>
+<p>## POB65_MAS
+Personas de 65 a 130 años de edad. <img src="bookdown-demo_files/figure-html/setup6-47.png" width="672" /></p>
+<p>## PROM_HNV
+Resultado de dividir el total de hijas e hijos nacidos vivos de las mujeres de 12 a 130 años de edad, entre el total de mujeres del mismo grupo de edad. Excluye a las mujeres que no especificaron el número de hijas e hijos. <img src="bookdown-demo_files/figure-html/setup6-48.png" width="672" /></p>
+<p>## PNACENT
+Personas nacidas en la misma entidad federativa. <img src="bookdown-demo_files/figure-html/setup6-49.png" width="672" /></p>
+<p>## PNACENT_F
+Mujeres nacidas en la misma entidad federativa. <img src="bookdown-demo_files/figure-html/setup6-50.png" width="672" /></p>
+<p>## PNACENT_M
+Hombres nacidos en la misma entidad federativa. <img src="bookdown-demo_files/figure-html/setup6-51.png" width="672" /></p>
+<p>## PNACOE
+Personas nacidas en otra entidad federativa. <img src="bookdown-demo_files/figure-html/setup6-52.png" width="672" /></p>
+<p>## PNACOE_F
+Mujeres nacidas en otra entidad federativa. <img src="bookdown-demo_files/figure-html/setup6-53.png" width="672" /></p>
+<p>## PNACOE_M
+Hombres nacidos en otra entidad federativa. <img src="bookdown-demo_files/figure-html/setup6-54.png" width="672" /></p>
+<p>## PRES2015
+Personas de 5 a 130 años de edad que en 2015 y 2020 residían en la misma entidad federativa. <img src="bookdown-demo_files/figure-html/setup6-55.png" width="672" /></p>
+<p>## PRES2015_F
+Mujeres de 5 a 130 años de edad que en 2015 y 2020 residían en la misma entidad federativa. <img src="bookdown-demo_files/figure-html/setup6-56.png" width="672" /></p>
+<p>## PRES2015_M
+Hombres de 5 a 130 años de edad que en 2015 y 2020 residían en la misma entidad federativa. <img src="bookdown-demo_files/figure-html/setup6-57.png" width="672" /></p>
+<p>## PRESOE15
+Personas de 5 a 130 años de edad que en el 2015 residían en otra entidad federativa. <img src="bookdown-demo_files/figure-html/setup6-58.png" width="672" /></p>
+<p>## PRESOE15_F
+Mujeres de 5 a 130 años de edad que en 2015 residían en otra entidad federativa. <img src="bookdown-demo_files/figure-html/setup6-59.png" width="672" /></p>
+<p>## PRESOE15_M
+Hombres de 5 a 130 años de edad que en 2015 residían en otra entidad federativa. <img src="bookdown-demo_files/figure-html/setup6-60.png" width="672" /></p>
+<p>## P3YM_HLI
+Personas de 3 a 130 años de edad que hablan alguna lengua indígena. <img src="bookdown-demo_files/figure-html/setup6-61.png" width="672" /></p>
+<p>## P3YM_HLI_F
+Mujeres de 3 a 130 años de edad que hablan alguna lengua indígena. <img src="bookdown-demo_files/figure-html/setup6-62.png" width="672" /></p>
+<p>## P3YM_HLI_M
+Hombres de 3 a 130 años de edad que hablan alguna lengua indígena. <img src="bookdown-demo_files/figure-html/setup6-63.png" width="672" /></p>
+<p>## P3HLINHE
+Personas de 3 a 130 años de edad que hablan alguna lengua indígena y además no hablan español. <img src="bookdown-demo_files/figure-html/setup6-64.png" width="672" /></p>
+<p>## P3HLINHE_F
+Mujeres de 3 a 130 años de edad que hablan alguna lengua indígena y además no hablan español. <img src="bookdown-demo_files/figure-html/setup6-65.png" width="672" /></p>
+<p>## P3HLINHE_M
+Hombres de 3 a 130 años de edad que hablan alguna lengua indígena y además no hablan español. <img src="bookdown-demo_files/figure-html/setup6-66.png" width="672" /></p>
+<p>## P3HLI_HE
+Personas de 3 a 130 años de edad que hablan alguna lengua indígena y además hablan español. <img src="bookdown-demo_files/figure-html/setup6-67.png" width="672" /></p>
+<p>## P3HLI_HE_F
+Mujeres de 3 a 130 años de edad que hablan alguna lengua indígena y además hablan español. <img src="bookdown-demo_files/figure-html/setup6-68.png" width="672" /></p>
+<p>## P3HLI_HE_M
+Hombres de 3 a 130 años de edad que hablan alguna lengua indígena y además hablan español. <img src="bookdown-demo_files/figure-html/setup6-69.png" width="672" /></p>
+<p>## P5_HLI
+Personas de 5 años y más que hablan alguna lengua indígena. <img src="bookdown-demo_files/figure-html/setup6-70.png" width="672" /></p>
+<p>## P5_HLI_NHE
+Personas de 5 años y más que hablan alguna lengua indígena y además no hablan español. <img src="bookdown-demo_files/figure-html/setup6-71.png" width="672" /></p>
+<p>## P5_HLI_HE
+Personas de 5 años y más que hablan alguna lengua indígena y además hablan español. <img src="bookdown-demo_files/figure-html/setup6-72.png" width="672" /></p>
+<p>## PHOG_IND
+Total de personas que forman hogares censales donde la persona de referencia del hogar o su cónyuge hablan alguna lengua indígena. <img src="bookdown-demo_files/figure-html/setup6-73.png" width="672" /></p>
+<p>## POB_AFRO
+Personas que se consideran afromexicanos o afrodescendientes. <img src="bookdown-demo_files/figure-html/setup6-74.png" width="672" /></p>
+<p>## POB_AFRO_F
+Mujeres que se consideran afromexicanas o afrodescendientes. <img src="bookdown-demo_files/figure-html/setup6-75.png" width="672" /></p>
+<p>## POB_AFRO_M
+Hombres que se consideran afromexicanos o afrodescendientes. <img src="bookdown-demo_files/figure-html/setup6-76.png" width="672" /></p>
+<p>## PCON_DISC
+Personas que tienen mucha dificultad para el desempeño o realización de tareas en la vida cotidiana. <img src="bookdown-demo_files/figure-html/setup6-77.png" width="672" /></p>
+<p>## PCDISC_MOT
+Personas con mucha dificultad para caminar o moverse, subir o bajar. <img src="bookdown-demo_files/figure-html/setup6-78.png" width="672" /></p>
+<p>## PCDISC_VIS
+Personas con mucha dificultad para ver, aun cuando usen lentes. <img src="bookdown-demo_files/figure-html/setup6-79.png" width="672" /></p>
+<p>## PCDISC_LENG
+Personas con mucha dificultad para comunicarse o conversar. <img src="bookdown-demo_files/figure-html/setup6-80.png" width="672" /></p>
+<p>## PCDISC_AUD
+Personas con mucha dificultad para escuchar, aun usando aparato auditivo. <img src="bookdown-demo_files/figure-html/setup6-81.png" width="672" /></p>
+<p>## PCDISC_MOT2
+Personas con mucha dificultad para vestirse, bañarse o comer. <img src="bookdown-demo_files/figure-html/setup6-82.png" width="672" /></p>
+<p>## PCDISC_MEN
+Personas con mucha dificultad para poner atención o aprender cosas sencillas. <img src="bookdown-demo_files/figure-html/setup6-83.png" width="672" /></p>
+<p>## PCON_LIMI
+Personas que tienen poca dificultad para el desempeño o realización de tareas en la vida cotidiana. <img src="bookdown-demo_files/figure-html/setup6-84.png" width="672" /></p>
+<p>## PCLIM_CSB
+Personas con poca dificultad para caminar o moverse, subir o bajar. <img src="bookdown-demo_files/figure-html/setup6-85.png" width="672" /></p>
+<p>## PCLIM_VIS
+Personas con poca dificultad para ver, aun cuando usen lentes. <img src="bookdown-demo_files/figure-html/setup6-86.png" width="672" /></p>
+<p>## PCLIM_HACO
+Personas con poca dificultad para hablar, comunicarse o conversar. <img src="bookdown-demo_files/figure-html/setup6-87.png" width="672" /></p>
+<p>## PCLIM_OAUD
+Personas con poca dificultad para escuchar, aun usando aparato auditivo. <img src="bookdown-demo_files/figure-html/setup6-88.png" width="672" /></p>
+<p>## PCLIM_MOT2
+Personas con poca dificultad para bañarse, vestirse o comer. <img src="bookdown-demo_files/figure-html/setup6-89.png" width="672" /></p>
+<p>## PCLIM_RE_CO
+Personas con poca dificultad para mantener un nivel de atención en cosas sencillas. <img src="bookdown-demo_files/figure-html/setup6-90.png" width="672" /></p>
+<p>## PCLIM_PMEN
+Personas con algún problema o condición mental <img src="bookdown-demo_files/figure-html/setup6-91.png" width="672" /></p>
+<p>## PSIND_LIM
+Personas que no tienen dificultad para el desempeño o realización de tareas de la vida cotidiana. <img src="bookdown-demo_files/figure-html/setup6-92.png" width="672" /></p>
+<p>## P3A5_NOA
+Personas de 3 a 5 años de edad que no van a la escuela. <img src="bookdown-demo_files/figure-html/setup6-93.png" width="672" /></p>
+<p>## P3A5_NOA_F
+Mujeres de 3 a 5 años de edad que no van a la escuela. <img src="bookdown-demo_files/figure-html/setup6-94.png" width="672" /></p>
+<p>## P3A5_NOA_M
+Hombres de 3 a 5 años de edad que no van a la escuela. <img src="bookdown-demo_files/figure-html/setup6-95.png" width="672" /></p>
+<p>## P6A11_NOA
+Personas de 6 a 11 años de edad que no van a la escuela. <img src="bookdown-demo_files/figure-html/setup6-96.png" width="672" /></p>
+<p>## P6A11_NOAF
+Mujeres de 6 a 11 años de edad que no van a la escuela. <img src="bookdown-demo_files/figure-html/setup6-97.png" width="672" /></p>
+<p>## P6A11_NOAM
+Hombres de 6 a 11 años de edad que no van a la escuela. <img src="bookdown-demo_files/figure-html/setup6-98.png" width="672" /></p>
+<p>## P12A14NOA
+Personas de 12 a 14 años de edad que no van a la escuela. <img src="bookdown-demo_files/figure-html/setup6-99.png" width="672" /></p>
+<p>## P12A14NOAF
+Mujeres de 12 a 14 años de edad que no van a la escuela. <img src="bookdown-demo_files/figure-html/setup6-100.png" width="672" /></p>
+<p>## P12A14NOAM
+Hombres de 12 a 14 años de edad que no van a la escuela. <img src="bookdown-demo_files/figure-html/setup6-101.png" width="672" /></p>
+<p>## P15A17A
+Personas de 15 a 17 años de edad que van a la escuela. <img src="bookdown-demo_files/figure-html/setup6-102.png" width="672" /></p>
+<p>## P15A17A_F
+Mujeres de 15 a 17 años de edad que van a la escuela. <img src="bookdown-demo_files/figure-html/setup6-103.png" width="672" /></p>
+<p>## P15A17A_M
+Hombres de 15 a 17 años de edad que van a la escuela. <img src="bookdown-demo_files/figure-html/setup6-104.png" width="672" /></p>
+<p>## P18A24A
+Personas de 18 a 24 años de edad que van a la escuela. <img src="bookdown-demo_files/figure-html/setup6-105.png" width="672" /></p>
+<p>## P18A24A_F
+Mujeres de 18 a 24 años de edad que van a la escuela. <img src="bookdown-demo_files/figure-html/setup6-106.png" width="672" /></p>
+<p>## P18A24A_M
+Hombres de 18 a 24 años de edad que van a la escuela. <img src="bookdown-demo_files/figure-html/setup6-107.png" width="672" /></p>
+<p>## P8A14AN
+Personas de 8 a 14 años de edad que no saben leer y escribir. <img src="bookdown-demo_files/figure-html/setup6-108.png" width="672" /></p>
+<p>## P8A14AN_F
+Mujeres de 8 a 14 años de edad que no saben leer y escribir. <img src="bookdown-demo_files/figure-html/setup6-109.png" width="672" /></p>
+<p>## P8A14AN_M
+Hombres de 8 a 14 años de edad que no saben leer y escribir. <img src="bookdown-demo_files/figure-html/setup6-110.png" width="672" /></p>
+<p>## P15YM_AN
+Personas de 15 a 130 años de edad que no saben leer y escribir. <img src="bookdown-demo_files/figure-html/setup6-111.png" width="672" /></p>
+<p>## P15YM_AN_F
+Mujeres de 15 a 130 años de edad que no saben leer y escribir. <img src="bookdown-demo_files/figure-html/setup6-112.png" width="672" /></p>
+<p>## P15YM_AN_M
+Hombres de 15 a 130 años de edad que no saben leer y escribir. <img src="bookdown-demo_files/figure-html/setup6-113.png" width="672" /></p>
+<p>## P15YM_SE
+Personas de 15 a 130 años de edad que no aprobaron ningún grado de escolaridad o que sólo tienen nivel preescolar. <img src="bookdown-demo_files/figure-html/setup6-114.png" width="672" /></p>
+<p>## P15YM_SE_F
+Mujeres de 15 a 130 años de edad que no aprobaron ningún grado de escolaridad o que sólo tienen nivel preescolar. <img src="bookdown-demo_files/figure-html/setup6-115.png" width="672" /></p>
+<p>## P15YM_SE_M
+Hombres de 15 a 130 años de edad que no aprobaron ningún grado de escolaridad o que sólo tienen nivel preescolar. <img src="bookdown-demo_files/figure-html/setup6-116.png" width="672" /></p>
+<p>## P15PRI_IN
+Personas de 15 a 130 años de edad que tienen como máxima escolaridad hasta el quinto grado aprobado en primaria. Incluye a las personas que no especificaron los grados aprobados en el nivel señalado. <img src="bookdown-demo_files/figure-html/setup6-117.png" width="672" /></p>
+<p>## P15PRI_INF
+Mujeres de 15 a 130 años de edad que tienen como máxima escolaridad hasta el quinto grado aprobado en primaria. Incluye a las mujeres que no especificaron los grados aprobados en el nivel señalado. <img src="bookdown-demo_files/figure-html/setup6-118.png" width="672" /></p>
+<p>## P15PRI_INM
+Hombres de 15 a 130 años de edad que tienen como máxima escolaridad hasta el quinto grado aprobado en primaria. Incluye a los hombres que no especificaron los grados aprobados en el nivel señalado. <img src="bookdown-demo_files/figure-html/setup6-119.png" width="672" /></p>
+<p>## P15PRI_CO
+Personas de 15 a 130 años de edad que tienen como máxima escolaridad 6 grados aprobados en primaria. <img src="bookdown-demo_files/figure-html/setup6-120.png" width="672" /></p>
+<p>## P15PRI_COF
+Mujeres de 15 a 130 años de edad que tienen como máxima escolaridad 6 grados aprobados en primaria. <img src="bookdown-demo_files/figure-html/setup6-121.png" width="672" /></p>
+<p>## P15PRI_COM
+Hombres de 15 a 130 años de edad que tienen como máxima escolaridad 6 grados aprobados en primaria. <img src="bookdown-demo_files/figure-html/setup6-122.png" width="672" /></p>
+<p>## P15SEC_IN
+Personas de 15 a 130 años de edad que tienen como máxima escolaridad hasta segundo grado aprobado de secundaria. Incluye a las personas que no especificaron los grados aprobados en el nivel señalado. <img src="bookdown-demo_files/figure-html/setup6-123.png" width="672" /></p>
+<p>## P15SEC_INF
+Mujeres de 15 a 130 años de edad que tienen como máxima escolaridad hasta segundo grado aprobado de secundaria. Incluye a las mujeres que no especificaron los grados aprobados en el nivel señalado. <img src="bookdown-demo_files/figure-html/setup6-124.png" width="672" /></p>
+<p>## P15SEC_INM
+Hombres de 15 a 130 años de edad que tienen como máxima escolaridad hasta segundo grado aprobado de secundaria. Incluye a los hombres que no especificaron los grados aprobados en el nivel señalado. <img src="bookdown-demo_files/figure-html/setup6-125.png" width="672" /></p>
+<p>## P15SEC_CO
+Personas de 15 a 130 años de edad que tienen como máxima escolaridad 3 grados aprobados en secundaria. <img src="bookdown-demo_files/figure-html/setup6-126.png" width="672" /></p>
+<p>## P15SEC_COF
+Mujeres de 15 a 130 años de edad que tienen como máxima escolaridad 3 grados aprobados en secundaria. <img src="bookdown-demo_files/figure-html/setup6-127.png" width="672" /></p>
+<p>## P15SEC_COM
+Hombres de 15 a 130 años de edad que tienen como máxima escolaridad 3 grados aprobados en secundaria. <img src="bookdown-demo_files/figure-html/setup6-128.png" width="672" /></p>
+<p>## P18YM_PB
+Personas de 18 a 130 años de edad que tienen como máxima escolaridad algún grado aprobado en preparatoria o bachillerato; normal básica; estudios técnicos o comerciales con secundaria terminada; estudios técnicos o comerciales con preparatoria terminada; normal de licenciatura; licenciatura o profesional; maestría o doctorado. Incluye a las personas que no especificaron los grados aprobados en los niveles señalados. <img src="bookdown-demo_files/figure-html/setup6-129.png" width="672" /></p>
+<p>## P18YM_PB_F
+Mujeres de 18 a 130 años de edad que tienen como máxima escolaridad algún grado aprobado: preparatoria o bachillerato; normal básica; estudios técnicos o comerciales con secundaria terminada; estudios técnicos o comerciales con preparatoria terminada; normal de licenciatura; licenciatura o profesional; maestría o doctorado. Incluye a las personas que no especificaron los grados aprobados en los niveles señalados. <img src="bookdown-demo_files/figure-html/setup6-130.png" width="672" /></p>
+<p>## P18YM_PB_M
+Hombres de 18 a 130 años de edad que tienen como máxima escolaridad algún grado aprobado en preparatoria o bachillerato; normal básica; estudios técnicos o comerciales con secundaria terminada; estudios técnicos o comerciales con preparatoria terminada; normal de licenciatura; licenciatura o profesional; maestría o doctorado. Incluye a las personas que no especificaron los grados aprobados en los niveles señalados. <img src="bookdown-demo_files/figure-html/setup6-131.png" width="672" /></p>
+<p>## GRAPROES
+Resultado de dividir el monto de grados escolares aprobados por las personas de 15 a 130 años de edad entre las personas del mismo grupo de edad. Excluye a las personas que no especificaron los grados aprobados. <img src="bookdown-demo_files/figure-html/setup6-132.png" width="672" /></p>
+<p>## GRAPROES_F
+Resultado de dividir el monto de grados escolares aprobados por las mujeres de 15 a 130 años de edad entre las mujeres del mismo grupo de edad. Excluye a las mujeres que no especificaron los grados aprobados. <img src="bookdown-demo_files/figure-html/setup6-133.png" width="672" /></p>
+<p>## GRAPROES_M
+Resultado de dividir el monto de grados escolares aprobados por los hombres de 15 a 130 años de edad entre los hombres del mismo grupo de edad. Excluye a los hombres que no especificaron los grados aprobados. <img src="bookdown-demo_files/figure-html/setup6-134.png" width="672" /></p>
+<p>## PEA
+Personas de 12 años y más que trabajaron, tenían trabajo pero no trabajaron o buscaron trabajo en la semana de referencia. <img src="bookdown-demo_files/figure-html/setup6-135.png" width="672" /></p>
+<p>## PEA_F
+Mujeres de 12 años y más que trabajaron, tenían trabajo pero no trabajaron o buscaron trabajo en la semana de referencia. <img src="bookdown-demo_files/figure-html/setup6-136.png" width="672" /></p>
+<p>## PEA_M
+Hombres de 12 años y más que trabajaron, tenían trabajo pero no trabajaron o buscaron trabajo en la semana de referencia. <img src="bookdown-demo_files/figure-html/setup6-137.png" width="672" /></p>
+<p>## PE_INAC
+Personas de 12 años y más pensionadas o jubiladas, estudiantes, dedicadas a los quehaceres del hogar; o que tienen alguna limitación física o mental permanente que les impide trabajar. <img src="bookdown-demo_files/figure-html/setup6-138.png" width="672" /></p>
+<p>## PE_INAC_F
+Mujeres de 12 años y más pensionadas o jubiladas, estudiantes, dedicadas a los quehaceres del hogar; o que tienen alguna limitación física o mental permanente que les impide trabajar. <img src="bookdown-demo_files/figure-html/setup6-139.png" width="672" /></p>
+<p>## PE_INAC_M
+Hombres de 12 años y más pensionados o jubilados, estudiantes, dedicados a los quehaceres del hogar; o que tienen alguna limitación física o mental permanente que les impide trabajar. <img src="bookdown-demo_files/figure-html/setup6-140.png" width="672" /></p>
+<p>## POCUPADA
+Personas de 12 a 130 años de edad que trabajaron o que no trabajaron, pero sí tenían trabajo en la semana de referencia. <img src="bookdown-demo_files/figure-html/setup6-141.png" width="672" /></p>
+<p>## POCUPADA_F
+Mujeres de 12 a 130 años de edad que trabajaron o que no trabajaron, pero sí tenían trabajo en la semana de referencia. <img src="bookdown-demo_files/figure-html/setup6-142.png" width="672" /></p>
+<p>## POCUPADA_M
+Hombres de 12 a 130 años de edad que trabajaron o que no trabajaron, pero sí tenían trabajo en la semana de referencia. <img src="bookdown-demo_files/figure-html/setup6-143.png" width="672" /></p>
+<p>## PDESOCUP
+Personas de 12 a 130 años de edad que no tenían trabajo, pero buscaron trabajo en la semana de referencia. <img src="bookdown-demo_files/figure-html/setup6-144.png" width="672" /></p>
+<p>## PDESOCUP_F
+Mujeres de 12 a 130 años de edad que no tenían trabajo, pero buscaron trabajo en la semana de referencia. <img src="bookdown-demo_files/figure-html/setup6-145.png" width="672" /></p>
+<p>## PDESOCUP_M
+Hombres de 12 a 130 años de edad que no tenían trabajo, pero buscaron trabajo en la semana de referencia. <img src="bookdown-demo_files/figure-html/setup6-146.png" width="672" /></p>
+<p>## PSINDER
+Total de personas que no tienen derecho a recibir servicios médicos en ninguna institución pública o privada. <img src="bookdown-demo_files/figure-html/setup6-147.png" width="672" /></p>
+<p>## PDER_SS
+Total de personas que tienen derecho a recibir servicios médicos en alguna institución de salud pública o privada como: el Instituto Mexicano del Seguro Social (IMSS), el Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado (ISSSTE e ISSSTE estatal), Petróleos Mexicanos (PEMEX), la Secretaría de la Defensa Nacional (SEDENA), la Secretaría de Marina Armada de México (SEMAR), el Sistema de Protección Social en Salud o en otra. <img src="bookdown-demo_files/figure-html/setup6-148.png" width="672" /></p>
+<p>## PDER_IMSS
+Total de personas que tienen derecho a recibir servicios médicos en el Instituto Mexicano del Seguro Social (IMSS). <img src="bookdown-demo_files/figure-html/setup6-149.png" width="672" /></p>
+<p>## PDER_ISTE
+Total de personas que tienen derecho a recibir servicios médicos en el Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado. <img src="bookdown-demo_files/figure-html/setup6-150.png" width="672" /></p>
+<p>## PDER_ISTEE
+Total de personas que tienen derecho a recibir servicios médicos en los institutos de seguridad social de los estados (ISSSET, ISSSEMyM, ISSSTEZAC, ISSSPEA o ISSSTESON). <img src="bookdown-demo_files/figure-html/setup6-151.png" width="672" /></p>
+<p>## PAFIL_PDOM
+Total de personas que tienen derecho a recibir servicios médicos en Petróleos Mexicanos (PEMEX), la Secretaría de la Defensa Nacional (SEDENA) o la Secretaría de Marina Armada de México (SEMAR). <img src="bookdown-demo_files/figure-html/setup6-152.png" width="672" /></p>
+<p>## PDER_SEGP
+Total de personas que tienen derecho a recibir servicios médicos en la Secretaría de Salud, mediante en el Instituto de Salud para el Bienestar. <img src="bookdown-demo_files/figure-html/setup6-153.png" width="672" /></p>
+<p>## PDER_IMSSB
+Total de personas que tienen derecho a recibir servicios médicos en el Instituto Mexicano del Seguro Social (IMSS) BIENESTAR <img src="bookdown-demo_files/figure-html/setup6-154.png" width="672" /></p>
+<p>## PAFIL_IPRIV
+Total de personas que tienen derecho a recibir servicios médicos en instituciones de salud privadas. <img src="bookdown-demo_files/figure-html/setup6-155.png" width="672" /></p>
+<p>## PAFIL_OTRAI
+Total de personas que tienen derecho a recibir servicios médicos en cualquier otra institución de salud pública o privada. <img src="bookdown-demo_files/figure-html/setup6-156.png" width="672" /></p>
+<p>## P12YM_SOLT
+Personas solteras de 12 a 130 años de edad. <img src="bookdown-demo_files/figure-html/setup6-157.png" width="672" /></p>
+<p>## P12YM_CASA
+Personas de 12 a 130 años de edad que viven con su pareja en unión libre, casadas sólo por el civil; casadas sólo religiosamente o; casadas por el civil y religiosamente. <img src="bookdown-demo_files/figure-html/setup6-158.png" width="672" /></p>
+<p>## P12YM_SEPA
+Personas de 12 a 130 años de edad que están separadas, divorciadas o viudas. <img src="bookdown-demo_files/figure-html/setup6-159.png" width="672" /></p>
+<p>## PCATOLICA
+Personas que tienen como creencia o preferencia espiritual la religión católica <img src="bookdown-demo_files/figure-html/setup6-160.png" width="672" /></p>
+<p>## PRO_CRIEVA
+Incluye a las denominaciones religiosas del grupo protestante/cristiano evangélico: protestantes, pentecostales, iglesia del Dios vivo, columna y apoyo de la verdad, la luz del mundo, cristianas, evangélicas, iglesia de Jesucristo de los santos de los últimos días (mormones) entre otras. <img src="bookdown-demo_files/figure-html/setup6-161.png" width="672" /></p>
+<p>## POTRAS_REL
+Personas con otras creencias o preferencias espirituales diferentes a las anteriores. <img src="bookdown-demo_files/figure-html/setup6-162.png" width="672" /></p>
+<p>## PSIN_RELIG
+Personas que declararon no tener religión o no estar adscritas en alguna. <img src="bookdown-demo_files/figure-html/setup6-163.png" width="672" /></p>
+<p>## TOTHOG
+Hogares en viviendas particulares habitadas. Se considera un hogar en cada vivienda particular. Incluye casa única en el terreno; departamento en edificio; vivienda en vecindad; vivienda en cuarto de azotea; local no construido para habitación; vivienda móvil; refugio o clase no especificada. <img src="bookdown-demo_files/figure-html/setup6-164.png" width="672" /></p>
+<p>## HOGJEF_F
+Hogares en viviendas particulares habitadas donde la persona de referencia es mujer. Se considera un hogar en cada vivienda particular. Incluye casa única en el terreno; departamento en edificio; vivienda en vecindad; vivienda en cuarto de azotea; local no construido para habitación; vivienda móvil; refugio o clase no especificada. <img src="bookdown-demo_files/figure-html/setup6-165.png" width="672" /></p>
+<p>## HOGJEF_M
+Hogares en viviendas particulares habitadas donde la persona es hombre. Se considera un hogar en cada vivienda particular. Incluye casa única en el terreno; departamento en edificio; vivienda en vecindad; vivienda en cuarto de azotea; local no construido para habitación; vivienda móvil; refugio o clase no especificada. <img src="bookdown-demo_files/figure-html/setup6-166.png" width="672" /></p>
+<p>## POBHOG
+Personas en hogares censales. Se considera un hogar en cada vivienda particular. Incluye casa única en el terreno; departamento en edificio; vivienda en vecindad; vivienda en cuarto de azotea; local no construido para habitación; vivienda móvil; refugio o clase no especificada. <img src="bookdown-demo_files/figure-html/setup6-167.png" width="672" /></p>
+<p>## PHOGJEF_F
+Personas en hogares censales donde la persona de referencia es mujer. Se considera un hogar en cada vivienda particular. Incluye casa única en el terreno; departamento en edificio; vivienda en vecindad; vivienda en cuarto de azotea; local no construido para habitación; vivienda móvil; refugio o clase no especificada. <img src="bookdown-demo_files/figure-html/setup6-168.png" width="672" /></p>
+<p>## PHOGJEF_M
+Personas en hogares censales donde la persona de referencia es hombre. Se considera un hogar en cada vivienda particular. Incluye casa única en el terreno; departamento en edificio; vivienda en vecindad; vivienda en cuarto de azotea; local no construido para habitación; vivienda móvil; refugio o clase no especificada. <img src="bookdown-demo_files/figure-html/setup6-169.png" width="672" /></p>
+<p>## VIVTOT
+Viviendas particulares habitadas, deshabitadas, de uso temporal. Incluye a las viviendas sin información de ocupantes. <img src="bookdown-demo_files/figure-html/setup6-170.png" width="672" /></p>
+<p>## TVIVHAB
+Viviendas particulares habitadas y colectivas. Incluye a las viviendas sin información de sus ocupantes. <img src="bookdown-demo_files/figure-html/setup6-171.png" width="672" /></p>
+<p>## TVIVPAR
+Viviendas particulares habitadas, deshabitadas y de uso temporal. <img src="bookdown-demo_files/figure-html/setup6-172.png" width="672" /></p>
+<p>## VIVPAR_HAB
+Viviendas particulares habitadas de cualquier clase: casa única en el terreno, departamento en edificio, vivienda o cuarto en vecindad, vivienda o cuarto de azotea, local no construido para habitación, vivienda móvil, refugios o clase no especificada. Excluye a las viviendas particulares sin información de ocupantes. <img src="bookdown-demo_files/figure-html/setup6-173.png" width="672" /></p>
+<p>## TVIVPARHAB
+Viviendas particulares habitadas de cualquier clase: casa única en el terreno, departamento en edificio, vivienda o cuarto en vecindad, vivienda o cuarto de azotea, local no construido para habitación, vivienda móvil, refugios o clase no especificada. Incluye a las viviendas particulares sin información de ocupantes. <img src="bookdown-demo_files/figure-html/setup6-174.png" width="672" /></p>
+<p>## VIVPAR_DES
+Viviendas particulares deshabitadas. <img src="bookdown-demo_files/figure-html/setup6-175.png" width="672" /></p>
+<p>## VIVPAR_UT
+Viviendas particulares de uso temporal. <img src="bookdown-demo_files/figure-html/setup6-176.png" width="672" /></p>
+<p>## OCUPVIVPAR
+Personas que residen en viviendas particulares habitadas de cualquier clase: casa única en el terreno, departamento en edificio, vivienda o cuarto en vecindad, vivienda o cuarto de azotea, local no construido para habitación, vivienda móvil, refugios o clase no especificada. <img src="bookdown-demo_files/figure-html/setup6-177.png" width="672" /></p>
+<p>## PROM_OCUP
+Resultado de dividir el número de personas que residen en viviendas particulares habitadas, entre el número de esas viviendas. <img src="bookdown-demo_files/figure-html/setup6-178.png" width="672" /></p>
+<p>## PRO_OCUP_C
+Resultado de dividir el número de personas que residen en viviendas particulares habitadas entre el número de cuartos de esas viviendas. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda o cuarto en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-179.png" width="672" /></p>
+<p>## VPH_PISODT
+Viviendas particulares habitadas con piso de cemento o firme, madera, mosaico u otro material. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda o cuarto en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-180.png" width="672" /></p>
+<p>## VPH_PISOTI
+Viviendas particulares habitadas con piso de tierra. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda o cuarto en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-181.png" width="672" /></p>
+<p>## VPH_1DOR
+Viviendas particulares habitadas donde sólo uno de los cuartos se usa para dormir. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda o cuarto en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-182.png" width="672" /></p>
+<p>## VPH_2YMASD
+Viviendas particulares habitadas que usan para dormir entre 2 y 25 cuartos. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda o cuarto en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-183.png" width="672" /></p>
+<p>## VPH_1CUART
+Viviendas particulares habitadas que tienen sólo un cuarto. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda o cuarto en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-184.png" width="672" /></p>
+<p>## VPH_2CUART
+Viviendas particulares habitadas que tienen dos cuartos. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda o cuarto en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-185.png" width="672" /></p>
+<p>## VPH_3YMASC
+Viviendas particulares habitadas que tienen entre 3 y 25 cuartos. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda o cuarto en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-186.png" width="672" /></p>
+<p>## VPH_C_ELEC
+Viviendas particulares habitadas que tienen energía eléctrica. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda o cuarto en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-187.png" width="672" /></p>
+<p>## VPH_S_ELEC
+Viviendas particulares habitadas que no tienen energía eléctrica. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda o cuarto en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-188.png" width="672" /></p>
+<p>## VPH_AGUADV
+Viviendas particulares habitadas que tienen disponibilidad de agua entubada dentro de la vivienda, o fuera de la vivienda, pero dentro del terreno. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda o cuarto en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-189.png" width="672" /></p>
+<p>## VPH_AEASP
+Viviendas particulares habitadas que disponen de agua entubada y se abastecen del servicio público de agua. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-190.png" width="672" /></p>
+<p>## VPH_AGUAFV
+Viviendas particulares habitadas que tienen disponibilidad de agua de una llave pública o hidrante; de otra vivienda; de pipa o de pozo, río, arroyo, lago u otro. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda o cuarto en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-191.png" width="672" /></p>
+<p>## VPH_TINACO
+Viviendas particulares habitadas que disponen de tinaco. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-192.png" width="672" /></p>
+<p>## VPH_CISTER
+Viviendas particulares habitadas que disponen de cisterna o aljibe. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-193.png" width="672" /></p>
+<p>## VPH_EXCSA
+Viviendas particulares habitadas que tienen excusado, retrete, sanitario, letrina u hoyo negro. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda o cuarto en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-194.png" width="672" /></p>
+<p>## VPH_LETR
+Viviendas particulares habitadas que disponen de letrina (pozo u hoyo). Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-195.png" width="672" /></p>
+<p>## VPH_DRENAJ
+Viviendas particulares habitadas que tienen drenaje conectado a la red pública, fosa séptica, barranca, grieta, río, lago o mar. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda o cuarto en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-196.png" width="672" /></p>
+<p>## VPH_NODREN
+Viviendas particulares habitadas que no tienen drenaje. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda o cuarto en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-197.png" width="672" /></p>
+<p>## VPH_C_SERV
+Viviendas particulares habitadas que tienen energía eléctrica, agua entubada dentro o fuera de la vivienda, pero dentro del terreno, así como drenaje. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda o cuarto en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-198.png" width="672" /></p>
+<p>## VPH_NDEAED
+Viviendas particulares habitadas que no tienen energía eléctrica, que únicamente tienen disponibilidad de agua de una llave pública o hidrante, de otra vivienda, de pipa, de pozo, río, arroyo, lago u otro y que no tienen drenaje. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-199.png" width="672" /></p>
+<p>## VPH_DSADMA
+Viviendas particulares habitadas que disponen de sanitario con admisión de agua y drenaje. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-200.png" width="672" /></p>
+<p>## VPH_NDACMM
+Viviendas particulares habitadas que no disponen de
+automóvil o camioneta ni motocicleta o motoneta.
+Comprende las viviendas particulares para las que se
+captaron las características de la vivienda, clasificadas
+vivienda en vecindad y vivienda o cuarto en azotea y a
+las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-201.png" width="672" /></p>
+<p>## VPH_SNBIEN
+Viviendas particulares habitadas que no cuentan con refrigerador, lavadora, auto o camioneta, radio, televisión, línea telefónica fija, teléfono celular, computadora ni Internet. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda o cuarto en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-202.png" width="672" /></p>
+<p>## VPH_REFRI
+Viviendas particulares habitadas que tienen refrigerador. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda o cuarto en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-203.png" width="672" /></p>
+<p>## VPH_LAVAD
+Viviendas particulares habitadas que tienen lavadora. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda o cuarto en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-204.png" width="672" /></p>
+<p>## VPH_HMICRO
+Viviendas particulares habitadas que tienen horno de microondas. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-205.png" width="672" /></p>
+<p>## VPH_AUTOM
+Viviendas particulares habitadas que tienen automóvil o camioneta. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda o cuarto en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-206.png" width="672" /></p>
+<p>## VPH_MOTO
+Viviendas particulares habitadas que tienen motocicleta o motoneta. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-207.png" width="672" /></p>
+<p>## VPH_BICI
+Viviendas particulares habitadas que tienen bicicleta como medio de transporte. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-208.png" width="672" /></p>
+<p>## VPH_RADIO
+Viviendas particulares habitadas que tienen radio. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda o cuarto en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-209.png" width="672" /></p>
+<p>## VPH_TV
+Viviendas particulares habitadas que tienen televisor. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda o cuarto en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-210.png" width="672" /></p>
+<p>## VPH_PC
+Viviendas particulares habitadas que tienen computadora, tablet o laptop. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda o cuarto en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-211.png" width="672" /></p>
+<p>## VPH_TELEF
+Viviendas particulares habitadas que tienen línea telefónica fija. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda o cuarto en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-212.png" width="672" /></p>
+<p>## VPH_CEL
+Viviendas particulares habitadas que tienen teléfono celular. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda o cuarto en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-213.png" width="672" /></p>
+<p>## VPH_INTER
+Viviendas particulares habitadas que tienen servicio de Internet. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda o cuarto en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-214.png" width="672" /></p>
+<p>## VPH_STVP
+Viviendas particulares habitadas que tienen servicio de televisión de paga. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-215.png" width="672" /></p>
+<p>## VPH_SPMVPI
+Viviendas particulares habitadas que disponen de servicio de películas, música o videos de paga por Internet. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-216.png" width="672" /></p>
+<p>## VPH_CVJ
+Viviendas particulares habitadas que disponen de consola de videojuegos. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-217.png" width="672" /></p>
+<p>## VPH_SINRTV
+Viviendas particulares habitadas que no tienen radio, ni televisor. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-218.png" width="672" /></p>
+<p>## VPH_SINLTC
+Viviendas particulares habitadas que no tienen línea telefónica fija, ni teléfono celular. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-219.png" width="672" /></p>
+<p>## VPH_SINCINT
+Viviendas particulares habitadas que no tienen computadora, ni Internet. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-220.png" width="672" /></p>
+<p>## VPH_SINTIC
+Viviendas particulares habitadas que no disponen de las tecnologías de la información y de la comunicación (TIC), es decir, que no cuentan con radio, televisión, línea telefónica fija, teléfono celular, computadora ni Internet. Comprende las viviendas particulares para las que se captaron las características de la vivienda, clasificadas como: casa única en el terreno, departamento en edificio, vivienda en vecindad y vivienda o cuarto en azotea y a las que no especificaron clase de vivienda. <img src="bookdown-demo_files/figure-html/setup6-221.png" width="672" /></p>
+<p>## TAMLOC
+Total de personas que residen habitualmente en la localidad, y se clasifica el tamaño con base en el número de la población de la localidad. <img src="bookdown-demo_files/figure-html/setup6-222.png" width="672" /></p>
+
+</div>
 </div>
             </section>
 
@@ -185,7 +768,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 
-<a href="intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="literature.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
