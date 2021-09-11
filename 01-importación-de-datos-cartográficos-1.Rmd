@@ -105,6 +105,8 @@ Para recuperar los datos censales a nivel estatal:
 
 En el archivo se registra la población total de la entidad cuando en el nombre de la localidad aparece la leyenda "Total de la Entidad" esto se puede observar al descomprimirlo.
 
+Este proceso se detalla en el siguiente video
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/B-XG77qvdnA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ```{r setup5, echo = TRUE, message = FALSE, warning=FALSE}

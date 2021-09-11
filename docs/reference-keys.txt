@@ -1,7 +1,8 @@
-fig:nice-fig
-tab:nice-tab
-prerequisites
-intro
+importación-de-datos-cartográficos
+cambio-de-acceso-estatal-en
+para-determinar-las-variables-e-indicadores
+importación-de-datos-censales
+pobtot
 literature
 methods
 math-example
