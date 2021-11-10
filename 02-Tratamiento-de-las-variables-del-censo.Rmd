@@ -1,0 +1,196 @@
+# Tratamiento de las variables del censo
+
+Se puede seleccionar alguna de las variables del censo para llevar a cabo el tratamiento de la misma, su representación espacial o el análisis descriptivo de sus valores.
+
+Se utiliza como parámetros alguna de las variables, para ejemplificar utilizaremos la población de 60 años y más
+
+
+## Representación en mapas, el estilo seleccionado está relacionado con la definición de los rangos que se grafican
+
+```{r echo = TRUE, message = FALSE, warning=FALSE}
+varname <- c("P_60YMAS")
+estilo<-c("pretty")
+entidad<-c("Coahuila de Zaragoza")
+municipio<-c("Torreón")
+indicad<-c("Indenv65")
+params <- data.frame(varname,estilo,entidad,municipio,indicad)
+
+tmap_mode("plot")
+
+  
+  varindi<-variablescensales[variablescensales$mnemonico == params$varname, "indicador"]
+  vardesc<-variablescensales[variablescensales$mnemonico == params$varname, "descripcion"]
+  
+  glue::glue (" {varindi} \n ") %>% cat()
+
+
+```  
+### Pretty
+
+```{r echo = TRUE, message = FALSE, warning=FALSE}
+
+  
+glue("El estilo pretty redondea y divide en números enteros siempre que sea posible y los espacia uniformemente. \n \n ") %>% cat()  
+
+tm_shape(basemapa) +
+  tm_polygons(params$varname)
+
+```
+
+### Quantile
+
+```{r echo = TRUE, message = FALSE, warning=FALSE}
+glue("El estilo quantile crea rangos con un igual número de poligonos (estados) \n \n ") %>% cat() 
+
+tm_shape(basemapa) +
+tm_fill(params$varname,palette=c("yellow","orange","red","green","blue"), style ="quantile")+
+tm_borders()+
+  tm_layout(legend.position = c("right", "bottom")) 
+
+```
+
+### Fisher
+
+```{r echo = TRUE, message = FALSE, warning=FALSE}
+
+glue("El estilo fisher crea grupos con la máxima homogeneidad \n \n ") %>% cat() 
+
+tm_shape(basemapa) +
+tm_fill(params$varname,palette="YlOrRd", style ="fisher")+
+tm_borders()+
+  tm_layout(legend.outside = FALSE, legend.outside.position = "right",inner.margins = c(0.06, 0.10, 0.10, 0.08))
+
+
+```
+
+### Equal
+
+```{r echo = TRUE, message = FALSE, warning=FALSE}
+
+glue("El estilo equal divide los valores en rangos de igual ancho \n \n ") %>% cat() 
+
+tm_shape(basemapa) +
+tm_fill(params$varname,palette="YlOrRd", style ="equal")+
+tm_borders()+
+  tm_layout(legend.outside = TRUE, legend.outside.position = "right")
+
+
+```
+
+### Fixed
+
+```{r echo = TRUE, message = FALSE, warning=FALSE}
+
+glue("El fixed  divide los valores en rangos de igual ancho \n \n ") %>% cat() 
+
+tm_shape(basemapa) +
+tm_fill(params$varname,palette="Blues", style ="fixed",breaks = c(100000,200000,300000,400000,500000, 600000,700000, 800000))+
+tm_borders()
+tmap_mode("plot")
+
+tm_shape(basemapa) + 
+  tm_fill(params$varname,title={varindi},legend.hist=TRUE ,n = 8) + 
+  tm_borders()+
+  tm_layout(legend.outside = TRUE, legend.outside.position = "right")+
+  tm_layout(title = paste0({vardesc}, " censo 2020"), title.size = 0.8, title.position = c("right","bottom"))
+
+#tmap_mode("view")
+
+
+```
+
+### Sd Desviación Estándar
+
+```{r echo = TRUE, message = FALSE, warning=FALSE}
+
+glue("El estilo sd calcula la desviación estándar de la variable y la usa como valor para el ancho de los rangos. \n \n ") %>% cat() 
+
+
+tm_shape(basemapa) +
+  tm_fill(params$varname,title={varindi},alpha=0.7,style="sd",palette="Blues",id="NOM_ENT") +
+  tm_borders() +
+  tm_basemap(server="OpenStreetMap",alpha=0.5)+
+  tm_layout(legend.outside = FALSE, legend.outside.position = "right",inner.margins = c(0.06, 0.10, 0.10, 0.08))
+ 
+
+```
+
+### Kmeans medias
+
+```{r echo = TRUE, message = FALSE, warning=FALSE}
+
+glue("El estilo kmeans utiliza la media de la variable y la usa como valor para el ancho de los rangos. \n \n ") %>% cat() 
+
+
+tm_shape(basemapa) +
+  tm_fill(params$varname,title={varindi},alpha=0.7,style="kmeans",palette="Blues",id="NOM_ENT") +
+  tm_borders() +
+  tm_basemap(server="OpenStreetMap",alpha=0.5)+
+  tm_layout(legend.outside = TRUE, legend.outside.position = "right")
+
+
+
+
+
+
+```
+
+### Representación bubbles
+
+```{r echo = TRUE, message = FALSE, warning=FALSE}
+
+tmap_mode("plot")
+glue("  \n## params$varname \n \n ") %>% cat()
+  
+  varindi<-variablescensales[variablescensales$mnemonico == params$varname, "indicador"]
+  vardesc<-variablescensales[variablescensales$mnemonico == params$varname, "descripcion"]
+  
+  glue::glue (" {varindi} \n ") %>% cat()
+
+tm_shape(basemapa) +
+    tm_bubbles(size=params$varname, 
+               col= params$varname, style ="kmeans", n=6,
+    palette ="RdYlBu",id="NOM_ENT")+
+  tm_borders() 
+
+
+tmap_mode("plot")
+ 
+```
+
+
+## Variable y sus gráficas
+
+```{r echo = TRUE, message = FALSE, warning=FALSE}
+
+
+  basic.stats <- function(dset, vars){
+    for(i in 1:length(vars)){
+        print(vars[i])
+        gg<-ggplot(data=dset, aes(x = dset$NOM_ENT, y =          dset[[vars[i]]])) + coord_flip()+
+        geom_bar(stat="identity", fill = "#FF6666") +
+  ylab(params$varname) +
+  xlab("")
+        print(gg)
+        print(summary(dset[[vars[i]]]))
+        print(quantile(dset[[vars[i]]],c(0,.01,.1,.5,.9,.99,1)))
+    }
+  }
+
+
+```
+
+### Estadísticas básicas
+
+```{r echo = TRUE, message = FALSE, warning=FALSE}
+
+  basic.stats(censonal, c(params$varname))
+
+```
+
+## Video
+
+Este proceso se detalla en el siguiente video
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EY8fZtlBzww" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+

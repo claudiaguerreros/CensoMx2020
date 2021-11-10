@@ -31,7 +31,7 @@ Donde:
 Marco Geoestadístico. Censo de Población y Vivienda 2020 2020 2.65 GB
 <https://inegi.org.mx/contenidos/productos//prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/889463807469_s.zip>
 
-### Cambio de acceso estatal en:
+## Cambio de acceso estatal en:
 
 <https://www.inegi.org.mx/programas/ccpv/2020/default.html#Datos_abiertos>
 
@@ -72,7 +72,7 @@ tm_shape(basemapan) +
 
 ```
 
-### Para determinar las variables e indicadores 
+## Para determinar las variables e indicadores 
 
 En el sitio <https://www.inegi.org.mx/programas/ccpv/2020/default.html#Datos_abiertos>
 
@@ -92,7 +92,7 @@ variablescensales<-read.csv(paste0(rutvar,"/Censo2020/","variablescensales.csv")
 
 str(variablescensales)
 ```
-### Importación de datos censales
+## Importación de datos censales
 
 En el sitio del INEGI se encuentran los resultados del CENSO 2020 para cada una de las entidades de la población
 <https://www.inegi.org.mx/programas/ccpv/2020/default.html#Datos_abiertos>
@@ -105,9 +105,6 @@ Para recuperar los datos censales a nivel estatal:
 
 En el archivo se registra la población total de la entidad cuando en el nombre de la localidad aparece la leyenda "Total de la Entidad" esto se puede observar al descomprimirlo.
 
-Este proceso se detalla en el siguiente video
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/B-XG77qvdnA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ```{r setup5, echo = TRUE, message = FALSE, warning=FALSE}
 
@@ -120,7 +117,7 @@ unzip(zipfile = temp, exdir = temp2)
 rut<-file.path(temp2)
 
 censonal<- read.csv(paste0(rut,"/","conjunto_de_datos/conjunto_de_datos_iter_00CSV20.csv"),header=TRUE, sep=",",encoding="UTF-8")
-
+censonalo<-censonal
 #Datos de toda la entidad uso del campo nom_loc para identificar los valores de las variables a nivel estatal
 
 censonal <-subset(censonal,censonal$NOM_LOC %in% c("Total de la Entidad"))
@@ -153,18 +150,56 @@ censonal[,cols] %<>% lapply(function(x) as.integer(as.character(x)))
 
 basemapa<-merge(basemapan,censonal, by="CVE_ENT", all.x =TRUE) 
 
-# el archivo "mplotVariableparametrizadanacional.R# tiene las instucciones para graficar
-#Se llama a través de la siguiente instrucción
-source("mplotVariableparametrizadanacional.R")
 
 ```
+## Graficación de todas las variables
 
+En el archivo "mplotVariableparametrizadanacional.R se encuentran las instucciones para graficar, y se ejecuta el proceso para las variables que se encuentran el el archivo variablescensales.csv
 
 
 ```{r setup6, echo = TRUE, message = FALSE, warning=FALSE,results="asis"}
+
+source("mplotVariableparametrizadanacional.R")
 
 variablescensales %>%
   pull(mnemonico) %>%
   as.character()%>%
   walk(mplotVariableparametrizadanacional)
+
 ```
+
+### Video 
+
+Este proceso se detalla en el siguiente video
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/B-XG77qvdnA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+Y este es el código del script. 
+"mplotVariableparametrizadanacional.R"
+
+
+
+-----------------------------------
+mplotVariableparametrizadanacional <-function(varname){
+  
+  glue("  \n## {varname} \n \n ") %>% cat()
+  
+  varindi<-variablescensales[variablescensales$mnemonico == {varname}, "descripcion"]
+  
+  glue::glue (" {varindi} \n ") %>% cat()
+  
+  mapa<-tm_shape(basemapa) +
+    tm_polygons({varname}, 
+                fill=as.numeric({varname}),      
+                style="jenks",
+                palette="YlOrBr",
+                title= paste0({varname}," ",latmx),
+                alpha = 0.5) + 
+    tm_scale_bar(position = c("right", "bottom")) +
+    tm_layout(legend.position = c("right", "top"),asp=1 ,scale=0.5)
+  
+ print(mapa)
+  
+  cat("\n \n ")
+}
